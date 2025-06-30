@@ -1,0 +1,393 @@
+body{
+    background-color: rgb(62, 17, 99);
+}
+
+.formBox{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+    width: 50%;
+    color: black;
+    justify-self: center;
+    margin-top: 20px;
+}
+
+.userForm{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.userListBox{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 50%;
+    justify-self: center;
+    margin-top: 20px;
+    border-radius: 15px;
+    height: 230px;
+    overflow-y: auto;
+    scrollbar-color: grey transparent;
+}
+
+.formHeading{
+    font-size: 34px;
+    font-weight: 700px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.formLabel{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.formInput{
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: black;
+    border-style: solid;
+    outline: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-width: 0px 0px 2px 0px;
+}
+
+.formInput:hover{
+    outline: none;
+}
+
+.formButton{
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+    background-color: rgb(10, 175, 10);
+    border-style: solid;
+    border-width: 0px;
+}
+
+.formButton:hover{
+    background-color: rgb(14, 216, 14);
+}
+
+.fromSelector{
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 5px;
+    border-radius: 10px;
+    border-width: 2px;
+    overflow-y: auto;
+    height: 20px;
+}
+
+.splites{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 50px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: gray;
+    margin-top: 5px;
+}
+
+.spliteItems{
+    display: flex;
+    flex-direction: row;
+    margin-top:1px
+}
+
+.fromCheckBox{
+    color:black;
+}
+
+.checkBoxItem{
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.Header{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}
+
+.navBox{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    list-style: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    color: rgb(224, 224, 224);
+    text-align: center;
+    padding: 0px;
+    font-weight: 600;
+}
+
+.title{
+    font-size: 44px;
+    font-weight: 900px;
+    font-family:Arial, Helvetica, sans-serif;
+    color: rgb(0, 199, 0);
+    margin-bottom: 0px;
+}
+
+.navItems{
+    margin: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.navItems:hover{
+    color: white;
+}
+
+.userBox{
+    display: flex;
+    flex-direction: row;
+    justify-self: left;
+    align-items: center;
+    margin-bottom:10px;
+    background-color: rgb(233, 232, 232);
+    width: 97%;
+    height: fit-content;
+    border-radius: 20px;
+    transition: all .5s ease-in-out;
+}
+
+.userBox:hover{
+    background-color: rgb(142, 238, 142);
+}
+
+.username{
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left: 10px;
+}
+
+.userBtnBox{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: right;
+    height: fit-content;
+}
+
+.userBoxBtn{
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+.userDetailBox{
+    display: none;
+    position: fixed;
+    top:80px;
+    right: 10px;
+    flex-direction: column;
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 20px;
+    color: black;
+}
+
+.userDetailName{
+    font-size: 28px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:10px 10px 0px 10px;
+}
+
+.userDetailTitle{
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}
+
+.userDetailSubBox{
+    display: flex;
+    flex-direction: column;
+}
+
+.userSubDetail{
+    display: flex;
+    flex-direction: row;
+}
+
+.userDetailOther{
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}
+
+.closeBtn{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-style:none;
+    background-color: rgb(223, 3, 3);
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    margin-top: 10px;
+}
+
+.closeBtn:hover{
+    background-color: red;
+}
+
+.transferListBox{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    margin-top: 20px;
+    background-color: white;
+    width: fit-content;
+    height: 350px;
+    overflow-y: scroll;
+    border-radius: 20px;
+    scrollbar-color: grey transparent;
+}
+
+.transferList{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    background-color: rgb(230, 228, 228);
+    margin:10px 10px 0px 10px;
+    border-radius: 20px;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.5s ease-in-out;
+}
+
+.transferList:hover{
+    background-color: whitesmoke;
+}
+
+.PayorBox,.timeBox, .amountBox, .splitBox{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    justify-content:stretch;
+    margin: 20px;
+    margin-bottom: 0px;
+    height: 100px;
+}
+
+.splitsNameBox{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    background-color: rgb(238, 238, 238);
+    border-radius: 5px;
+    scrollbar-color: grey transparent;
+    height: 50px;
+}
+
+.splitsName{
+    font-size: 16px;
+    font-weight: 600;
+    margin:0px 10px 5px 0px;
+}
+
+.transferListLabel{
+    color: black;
+    font-size: 16px;
+    margin-top: 0px;
+}
+
+.payorName, .amount{
+    font-size: 24px;
+    margin-left: 5px;
+}
+
+.time{
+    font-size: 16px;
+    line-height: 40px;
+    margin-left: 5px;
+    color: green;
+}
+
+@media(max-width:733px){
+    .formBox{
+        width:80%;
+    }
+}
+
+@media(max-width:614px){
+    .formHeading{
+        font-size: 26px;
+    }
+    .payorName, .amount{
+        font-size: 18px;
+    }
+    .time{
+        font-size: 12px;
+        line-height: 30px;
+    }
+    .splitsName{
+        font-size: 14px;
+    }
+    .PayorBox,.timeBox, .amountBox, .splitBox{
+        margin: 10px;
+    }
+}
+
+@media(max-width:446px){
+    .userBoxBtn{
+        height: 25px;
+        width: 25px;
+    }
+    .transferListBox{
+        width: 80%;
+    }
+    .transferList{
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+    }
+    .PayorBox,.timeBox, .amountBox, .splitBox{
+        margin-bottom: 0px;
+        margin-top: 5px;
+        align-items: center;
+    }
+    .payorName, .amount{
+        margin-left: 0px;
+        font-size: 28px;
+        margin-bottom: 2px;
+    }
+    .time{
+        margin-left: 0px;
+        font-size: 16px;
+    }
+    .transferListLabel{
+        font-size: 18px;
+        margin-bottom: 2px;
+    }
+}
+
+@media(max-width:388px){
+    .time{
+        font-size: 14px;
+        text-align: center;
+    }
+    .userListBox{
+        width: 80%;
+    }
+}
