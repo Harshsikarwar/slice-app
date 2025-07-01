@@ -28,6 +28,7 @@ export default function TransferForm(){
         dispatch(setBorrow())
         dispatch(setTransfer())
         
+        
         setPayor("")
         setAmount("")
     }

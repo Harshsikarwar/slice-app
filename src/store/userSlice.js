@@ -15,7 +15,7 @@ const initialState = {
             userName: ""
         }
     ],
-    userDataDisplay:"none"
+    userDataDisplay:"none",
 }
 
 const userSlice = createSlice({
@@ -64,10 +64,12 @@ const userSlice = createSlice({
         setTransaction : (state, actions)=>{
             if(actions.payload[2] > 99999){
                 alert("amount size only allow under 5 digits")
+                localStorage.setItem("recentTransfer",[])
                 return
             }
             if(actions.payload[3] <= 0 ){
                 alert("select atlest one user for split")
+                localStorage.setItem("recentTransfer",[])
                 return
             }
             const userTransfer = {
@@ -81,17 +83,25 @@ const userSlice = createSlice({
             }
             const user = state.userData.find((item)=>(item.userName === actions.payload[0]))
             if(user){
+                console.log("comes");
+                
                 state.transferData.unshift(userTransfer)
                 localStorage.setItem("transfers",JSON.stringify(state.transferData))
                 localStorage.setItem("recentTransfer",JSON.stringify(userTransfer))
             }
             else{
                 alert("user not exist")
+                localStorage.setItem("recentTransfer",[])
+                return
             }
+            state.transferStatus = true
         },
 
         setBorrow : (state, actions)=>{
             const transaction = JSON.parse(localStorage.getItem("recentTransfer"))
+            if(!transaction){
+                return
+            }
             
             for(let i=0; i<transaction.totalSplits; i++){
                 let splitValue = transaction.amountSplit
