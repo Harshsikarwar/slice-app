@@ -13,7 +13,7 @@ export default function TransferList(){
                     </div>
                     <div className="timeBox">
                         <p className="transferListLabel">time</p>
-                        <b className="time">{data.time.slice(0,24)}</b>
+                        <b className="time">{data.time.slice(16,24)}</b>
                     </div>
                     <div className="amountBox">
                         <p className="transferListLabel">Amount</p>

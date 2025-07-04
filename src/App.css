@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(62, 17, 99);
+    background-image: linear-gradient(to top,rgb(82, 16, 112), rgb(62, 17, 99));
 }
 
 .formBox{
@@ -158,7 +158,7 @@ body{
 .userBox{
     display: flex;
     flex-direction: row;
-    justify-self: left;
+    justify-self: center;
     align-items: center;
     margin-bottom:10px;
     background-color: rgb(233, 232, 232);
@@ -277,7 +277,7 @@ body{
 }
 
 .transferList:hover{
-    background-color: whitesmoke;
+    background-color: rgb(142, 238, 142);
 }
 
 .PayorBox,.timeBox, .amountBox, .splitBox{
@@ -328,6 +328,9 @@ body{
     .formBox{
         width:80%;
     }
+    .userListBox{
+        width: 80%;
+    }
 }
 
 @media(max-width:614px){
@@ -354,40 +357,29 @@ body{
         height: 25px;
         width: 25px;
     }
+    .transferList{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
     .transferListBox{
         width: 80%;
     }
-    .transferList{
-        flex-direction: column;
-        align-items: center;
-        width: 80%;
-    }
     .PayorBox,.timeBox, .amountBox, .splitBox{
+        margin: 5px;
         margin-bottom: 0px;
         margin-top: 5px;
         align-items: center;
-    }
-    .payorName, .amount{
-        margin-left: 0px;
-        font-size: 28px;
-        margin-bottom: 2px;
-    }
-    .time{
-        margin-left: 0px;
-        font-size: 16px;
-    }
-    .transferListLabel{
-        font-size: 18px;
-        margin-bottom: 2px;
     }
 }
 
 @media(max-width:388px){
     .time{
-        font-size: 14px;
         text-align: center;
     }
     .userListBox{
         width: 80%;
+    }
+    .transferListBox{
+        width: fit-content;
     }
 }

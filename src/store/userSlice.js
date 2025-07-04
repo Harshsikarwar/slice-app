@@ -83,8 +83,6 @@ const userSlice = createSlice({
             }
             const user = state.userData.find((item)=>(item.userName === actions.payload[0]))
             if(user){
-                console.log("comes");
-                
                 state.transferData.unshift(userTransfer)
                 localStorage.setItem("transfers",JSON.stringify(state.transferData))
                 localStorage.setItem("recentTransfer",JSON.stringify(userTransfer))
