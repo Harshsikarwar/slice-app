@@ -79,10 +79,19 @@ const userSlice = createSlice({
                 amount : Number(actions.payload[2]),
                 amountSplit : Math.round(Number(actions.payload[2]) / Number(actions.payload[3])),
                 totalSplits : actions.payload[3],
-                time : String(new Date())
+                time : String(new Date()),
+                payorInSplit : false
             }
             const user = state.userData.find((item)=>(item.userName === actions.payload[0]))
             if(user){
+                for(let i in userTransfer.splits){
+                    if(userTransfer.payor === userTransfer.splits[i]){
+                        userTransfer.payorInSplit = true
+                        userTransfer.totalSplits-=1;
+                        userTransfer.splits = userTransfer.splits.filter((item)=>item != userTransfer.payor)
+                        
+                    }
+                }
                 state.transferData.unshift(userTransfer)
                 localStorage.setItem("transfers",JSON.stringify(state.transferData))
                 localStorage.setItem("recentTransfer",JSON.stringify(userTransfer))
@@ -103,18 +112,21 @@ const userSlice = createSlice({
             
             for(let i=0; i<transaction.totalSplits; i++){
                 let splitValue = transaction.amountSplit
+                console.log("comes-loop:",i," split value:",splitValue);
                 const user = JSON.parse(localStorage.getItem("userData")).find((item)=>(transaction.splits[i] === item.userName))
                 if(user.transfer){
                     const userUpdate = user.transfer.find((userTrasnfer)=>(transaction.payor === userTrasnfer.userName))
                     if(userUpdate){
                         if(userUpdate.amount >= transaction.amountSplit ){
+                            console.log("comes-1");
                             userUpdate.amount-=transaction.amountSplit
                             state.userData = state.userData.filter((item)=>(item.userName != transaction.splits[i]))
                             state.userData.push(user)
                             localStorage.setItem("userData",JSON.stringify(state.userData))
-                            return
+                            continue
                         }
                         else{
+                            console.log("comes-2");
                             splitValue = transaction.amountSplit - userUpdate.amount
                             userUpdate.amount = 0
                         }
@@ -162,7 +174,7 @@ const userSlice = createSlice({
                             state.userData = state.userData.filter((item)=>(item.userName != transaction.payor))
                             state.userData.push(user)
                             localStorage.setItem("userData",JSON.stringify(state.userData))
-                            return
+                            continue
                         }
                         else{
                             splitValue = transaction.amountSplit - userUpdate.amount

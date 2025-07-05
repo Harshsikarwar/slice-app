@@ -41,7 +41,7 @@ export default function TransferForm(){
                 <label className="formLabel">Splites</label>
                 <div className="splites">
                     {
-                        currUsers.map((user)=>((user.userName === payor)? null:
+                        currUsers.map((user)=>(
                             <div key={user.userId} className="spliteItems">
                                 <input name="spliceUsers" className="fromCheckBox" type="checkbox" value={user.userName}></input>
                                 <label className="checkBoxItem">{user.userName}</label>

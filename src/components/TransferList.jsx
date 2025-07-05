@@ -23,8 +23,10 @@ export default function TransferList(){
                         <p className="transferListLabel">Splits</p>
                         <div className="splitsNameBox">
                             {data.splits.map((item)=>(
-                                <p className="splitsName">{item}</p>
+                                <p key={item} className="splitsName">{item}</p>
                             ))}
+                            {(data.payorInSplit != true)? null : 
+                            <p className="splitsName">{data.payor}</p>}
                         </div>
                     </div>
                 </div>
