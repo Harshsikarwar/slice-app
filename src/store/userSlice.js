@@ -112,13 +112,11 @@ const userSlice = createSlice({
             
             for(let i=0; i<transaction.totalSplits; i++){
                 let splitValue = transaction.amountSplit
-                console.log("comes-loop:",i," split value:",splitValue);
                 const user = JSON.parse(localStorage.getItem("userData")).find((item)=>(transaction.splits[i] === item.userName))
                 if(user.transfer){
                     const userUpdate = user.transfer.find((userTrasnfer)=>(transaction.payor === userTrasnfer.userName))
                     if(userUpdate){
                         if(userUpdate.amount >= transaction.amountSplit ){
-                            console.log("comes-1");
                             userUpdate.amount-=transaction.amountSplit
                             state.userData = state.userData.filter((item)=>(item.userName != transaction.splits[i]))
                             state.userData.push(user)
